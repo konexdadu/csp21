@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href=".\login.component.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src=".\assets\images (2).jpeg" alt="">
+        <div class="text">
+          <span class="text-1">Every new journey is a <br> new adventure</span>
+          <span class="text-2">Let's travel</span>
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src=".\assets\images (8).jpeg" alt="">
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form >
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" name="email" [(ngModel)]="Doctor.email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" name="password" [(ngModel)]="Doctor.password"  required>
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit" (click)="Read()">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+        <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" name="name" placeholder="Enter your name" [(ngModel)]="User.name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="email" placeholder="Enter your email" [(ngModel)]="User.email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Enter your password" [(ngModel)]="User.password" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit" (click)="Insert()">
+                <div class="alert alert-success my-2" style="color: black;" *ngIf="!(SuccessMsg =='')">{{SuccessMsg}}</div>
+                <div class="alert alert-danger my-2" style="color: black;" *ngIf="!(ErrorMsg =='')">{{ErrorMsg}}</div>
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+<router-outlet></router-outlet>
+</html>
